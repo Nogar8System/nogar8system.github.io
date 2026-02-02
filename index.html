@@ -11,6 +11,8 @@
   --card: #020617cc;
   --accent: #38bdf8;
   --text: #e5e7eb;
+  --paypal-blue: #0070ba;
+  --paypal-light: #009cde;
 }
 
 * {
@@ -141,9 +143,83 @@ main {
 /* Footer */
 footer {
   text-align: center;
-  padding: 30px;
-  opacity: 0.5;
+  padding: 30px 40px 20px;
+  opacity: 0.8;
   font-size: 14px;
+  border-top: 1px solid #1e293b;
+  margin-top: 50px;
+}
+
+.donation-section {
+  margin-bottom: 25px;
+  padding: 20px;
+  background: linear-gradient(135deg, rgba(0, 112, 186, 0.1), rgba(0, 156, 222, 0.05));
+  border-radius: 16px;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.donation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.donation-title {
+  color: var(--accent);
+  font-size: 18px;
+  margin: 0;
+  font-weight: 600;
+}
+
+.donation-text {
+  font-size: 15px;
+  opacity: 0.9;
+  max-width: 400px;
+  margin: 0;
+}
+
+.donation-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, var(--paypal-blue), var(--paypal-light));
+  color: white;
+  text-decoration: none;
+  border-radius: 14px;
+  font-weight: 600;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0, 112, 186, 0.3);
+  margin-top: 5px;
+}
+
+.donation-button:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 112, 186, 0.5);
+  background: linear-gradient(135deg, #005ea6, #0088cc);
+}
+
+.donation-button:active {
+  transform: translateY(-1px);
+}
+
+.donation-logo {
+  height: 32px;
+  width: auto;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.3));
+}
+
+.copyright {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 13px;
+  opacity: 0.6;
 }
 
 /* Mobile */
@@ -159,6 +235,17 @@ footer {
   }
   .card-logo {
     width: 28px;
+    height: 28px;
+  }
+  .donation-section {
+    margin: 0 10px 20px;
+    padding: 15px;
+  }
+  .donation-button {
+    padding: 12px 22px;
+    font-size: 15px;
+  }
+  .donation-logo {
     height: 28px;
   }
 }
@@ -313,7 +400,31 @@ footer {
 </main>
 
 <footer>
-  © 2026 – Nogar8System - Sistemi informatici
+  <!-- Sezione Donazione -->
+  <div class="donation-section">
+    <div class="donation-content">
+      <h3 class="donation-title">Supporta lo Sviluppo</h3>
+      <p class="donation-text">
+        Se trovi utili questi progetti, considera di supportare lo sviluppo software con una donazione.
+        Ogni contributo aiuta a mantenere e migliorare i software.
+      </p>
+      <a href="https://paypal.me/nogar8system" 
+         target="_blank" 
+         rel="noopener noreferrer" 
+         class="donation-button">
+        <img src="assets/donate.png" alt="Dona con PayPal" class="donation-logo">
+        <span>Dona con PayPal</span>
+      </a>
+      <!-- <p class="donation-text" style="font-size: 13px; margin-top: 5px;">-->
+        <!-- Link diretto: paypal.me/nogar8system-->
+      <!-- </p>-->
+    </div>
+  </div>
+
+  <!-- Copyright -->
+  <div class="copyright">
+    © 2026 – Nogar8System - Sistemi informatici
+  </div>
 </footer>
 
 </body>
