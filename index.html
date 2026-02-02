@@ -4,6 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Nogar8System – Projects</title>
+<!-- Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 :root {
@@ -208,16 +210,11 @@ footer {
   transform: translateY(-1px);
 }
 
-/* Logo SVG PayPal - CORREZIONE */
+/* Stile per l'icona Font Awesome PayPal */
 .donation-logo {
-  height: 32px;
-  width: 32px;
+  font-size: 32px;
+  color: white;
   filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.5));
-}
-
-/* Assicura che il logo SVG sia bianco */
-.donation-logo path {
-  fill: white;
 }
 
 .copyright {
@@ -252,8 +249,7 @@ footer {
     font-size: 15px;
   }
   .donation-logo {
-    height: 28px;
-    width: 28px;
+    font-size: 28px;
   }
 }
 
@@ -417,11 +413,10 @@ footer {
       <a href="https://paypal.me/nogar8system" 
          target="_blank" 
          rel="noopener noreferrer" 
-         class="donation-button">
-        <!-- Logo SVG PayPal -->
-        <svg class="donation-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path fill="currentColor" d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81c1.01 1.15 1.304 2.42 1.012 4.287c-.023.143-.047.288-.077.437c-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-1.888-1.42-5.036-1.22-7.169-.907c-.272.04-.52.076-.736.104c-1.043.148-1.966.28-2.666.384l-.525.076c-.196.028-.373.054-.535.08c-1.257.19-2.007.3-2.486.59c-.472.286-.662.627-.702 1.22c-.04.592.111.995.493 1.48c.385.49.954.86 1.896 1.199c.663.238 1.542.44 2.431.65c.973.23 2.065.487 2.97.886c1.243.547 1.892 1.342 2.098 2.593c.205 1.25-.07 2.548-.663 3.746c-.592 1.198-1.435 2.083-2.724 2.657c-1.157.506-2.523.75-3.945.75H8.287a1.239 1.239 0 0 1-1.221-1.026l-1.12-7.106a1.24 1.24 0 0 1 1.22-1.459h2.19c4.297 0 7.664-1.747 8.647-6.796c.03-.15.054-.294.077-.437c.205-1.252-.07-2.55-.663-3.747z"/>
-        </svg>
+         class="donation-button"
+         aria-label="Donazioni PayPal" 
+         title="Supporta il progetto">
+        <i class="fab fa-paypal donation-logo"></i>
         <span>Dona con PayPal</span>
       </a>
     </div>
