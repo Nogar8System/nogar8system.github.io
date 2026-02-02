@@ -131,15 +131,117 @@ footer {
     padding: 20px;
   }
 }
+
+.hero {
+  position: relative;
+  padding: 40px 60px;
+  background: linear-gradient(135deg, #020617, #020617cc);
+  border-bottom: 1px solid #1e293b;
+  overflow: hidden;
+}
+
+/* watermark animato */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/logo.png") center no-repeat;
+  background-size: 35%;
+  opacity: 0.04;
+  animation: float 20s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes float {
+  0% { transform: scale(1) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(1deg); }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.hero-content {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  position: relative;
+  z-index: 2;
+}
+
+.hero-logo {
+  height: 70px;
+  filter: drop-shadow(0 0 12px rgba(56,189,248,0.6));
+}
+
+.hero-text h1 {
+  margin: 0;
+  font-size: 36px;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #38bdf8, #22d3ee);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-text span {
+  font-size: 14px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* linea neon */
+.hero-line {
+  margin-top: 25px;
+  height: 2px;
+  width: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #38bdf8,
+    #22d3ee,
+    #38bdf8,
+    transparent
+  );
+  animation: scan 4s linear infinite;
+}
+
+@keyframes scan {
+  0% { background-position: 0%; }
+  100% { background-position: 200%; }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .hero {
+    padding: 30px 20px;
+  }
+
+  .hero-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero-text h1 {
+    font-size: 28px;
+  }
+}
+
 </style>
 </head>
 
 <body>
 
-<header>
-  <img src="assets/logo.png" alt="Nogar8System Logo">
-  <h1>Nogar8System - Sistemi Informatici</h1>
+<header class="hero">
+  <div class="hero-content">
+    <img src="assets/logo.png" alt="Nogar8System Logo" class="hero-logo">
+
+    <div class="hero-text">
+      <h1>Nogar8System</h1>
+      <span>Sistemi Informatici</span>
+    </div>
+  </div>
+
+  <div class="hero-line"></div>
 </header>
+
 
 <main>
   <div class="subtitle">
