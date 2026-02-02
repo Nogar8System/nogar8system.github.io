@@ -82,6 +82,8 @@ main {
   backdrop-filter: blur(10px);
   border: 1px solid #1e293b;
   transition: transform .3s, box-shadow .3s;
+  display: flex;
+  flex-direction: column;
 }
 
 .card:hover {
@@ -92,15 +94,29 @@ main {
 .card h2 {
   margin-top: 0;
   color: var(--accent);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 22px;
+}
+
+.card-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 8px rgba(56,189,248,0.4));
 }
 
 .card p {
   opacity: 0.85;
   line-height: 1.5;
+  flex-grow: 1;
 }
 
 .card a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   margin-top: 15px;
   padding: 10px 18px;
   background: var(--accent);
@@ -108,10 +124,18 @@ main {
   text-decoration: none;
   border-radius: 12px;
   font-weight: 600;
+  gap: 8px;
+  transition: all 0.3s;
 }
 
 .card a:hover {
   filter: brightness(1.1);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(56,189,248,0.3);
+}
+
+.card-link-icon {
+  font-size: 16px;
 }
 
 /* Footer */
@@ -129,6 +153,13 @@ footer {
   }
   main {
     padding: 20px;
+  }
+  .card h2 {
+    font-size: 20px;
+  }
+  .card-logo {
+    width: 28px;
+    height: 28px;
   }
 }
 
@@ -251,19 +282,31 @@ footer {
   <div class="grid">
 
     <div class="card">
-      <h2>📄 PDF Watermark Tool</h2>
+      <h2>
+        <img src="assets/PDF_Watermark_Tool.ico" alt="PDF Watermark Tool" class="card-logo">
+        PDF Watermark Tool
+      </h2>
       <p>
         Strumento web per aggiungere watermark ai file PDF in modo semplice e veloce.
       </p>
-      <a href="PDF_Watermark_Tool/">Apri progetto</a>
+      <a href="PDF_Watermark_Tool/">
+        <span class="card-link-icon">🔗</span>
+        Apri progetto
+      </a>
     </div>
 
     <div class="card">
-      <h2>🎙️ Trascrittore Audio / Video</h2>
+      <h2>
+        <img src="assets/Trascrittore_Audio-Video.ico" alt="Trascrittore Audio/Video" class="card-logo">
+        Trascrittore Audio / Video
+      </h2>
       <p>
         Trascrizione automatica di file audio e video con supporto multiformato.
       </p>
-      <a href="Trascrittore_Audio-Video/">Apri progetto</a>
+      <a href="Trascrittore_Audio-Video/">
+        <span class="card-link-icon">🔗</span>
+        Apri progetto
+      </a>
     </div>
 
   </div>
