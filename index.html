@@ -1,49 +1,175 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <title>Nogar8System – Projects</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background: #0f172a;
-            color: #e5e7eb;
-            margin: 0;
-            padding: 40px;
-        }
-        h1 {
-            color: #38bdf8;
-        }
-        .repo {
-            background: #020617;
-            padding: 20px;
-            margin: 15px 0;
-            border-radius: 10px;
-        }
-        a {
-            color: #22d3ee;
-            text-decoration: none;
-            font-size: 18px;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nogar8System – Projects</title>
+
+<style>
+:root {
+  --bg: #020617;
+  --card: #020617cc;
+  --accent: #38bdf8;
+  --text: #e5e7eb;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Watermark logo */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("assets/logo.png") center no-repeat;
+  background-size: 40%;
+  opacity: 0.05;
+  pointer-events: none;
+}
+
+/* Header */
+header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 25px 40px;
+}
+
+header img {
+  height: 50px;
+}
+
+header h1 {
+  font-size: 24px;
+  color: var(--accent);
+  margin: 0;
+}
+
+/* Main */
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 40px;
+}
+
+.subtitle {
+  font-size: 18px;
+  margin-bottom: 30px;
+  opacity: 0.8;
+}
+
+/* Cards */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: var(--card);
+  border-radius: 18px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #1e293b;
+  transition: transform .3s, box-shadow .3s;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(56,189,248,0.25);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: var(--accent);
+}
+
+.card p {
+  opacity: 0.85;
+  line-height: 1.5;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 18px;
+  background: var(--accent);
+  color: #020617;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.card a:hover {
+  filter: brightness(1.1);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 30px;
+  opacity: 0.5;
+  font-size: 14px;
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  header {
+    padding: 20px;
+  }
+  main {
+    padding: 20px;
+  }
+}
+</style>
 </head>
+
 <body>
 
-<h1>🚀 Nogar8System – Repository</h1>
-<p>Seleziona un progetto:</p>
+<header>
+  <img src="assets/logo.png" alt="Nogar8System Logo">
+  <h1>Nogar8System</h1>
+</header>
 
-<div class="repo">
-    <a href="PDF_Watermark_Tool/">📄 PDF Watermark Tool</a>
-    <p>Strumento per aggiungere watermark ai PDF</p>
-</div>
+<main>
+  <div class="subtitle">
+    🚀 Progetti pubblici e strumenti sviluppati
+  </div>
 
-<div class="repo">
-    <a href="Trascrittore_Audio-Video/">🎙️ Trascrittore Audio/Video</a>
-    <p>Trascrizione automatica da file audio e video</p>
-</div>
+  <div class="grid">
+
+    <div class="card">
+      <h2>📄 PDF Watermark Tool</h2>
+      <p>
+        Strumento web per aggiungere watermark ai file PDF in modo semplice e veloce.
+      </p>
+      <a href="PDF_Watermark_Tool/">Apri progetto</a>
+    </div>
+
+    <div class="card">
+      <h2>🎙️ Trascrittore Audio / Video</h2>
+      <p>
+        Trascrizione automatica di file audio e video con supporto multiformato.
+      </p>
+      <a href="Trascrittore_Audio-Video/">Apri progetto</a>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2026 – Nogar8System
+</footer>
 
 </body>
 </html>
